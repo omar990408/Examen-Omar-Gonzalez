@@ -1,12 +1,14 @@
 package ec.edu.espe.arquitectura.examen_gonzalez.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "OFI_SEDE")
+@Data
 public class Sede {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

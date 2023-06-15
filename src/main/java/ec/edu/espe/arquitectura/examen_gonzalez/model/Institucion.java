@@ -1,11 +1,13 @@
 package ec.edu.espe.arquitectura.examen_gonzalez.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "OFI_INSTITUCION")
+@Data
 public class Institucion {
 
     @Id

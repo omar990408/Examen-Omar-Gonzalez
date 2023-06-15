@@ -1,12 +1,14 @@
 package ec.edu.espe.arquitectura.examen_gonzalez.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
 @Table(name = "OFI_EDIFICIO")
+@Data
 public class Edificio {
 
     @EmbeddedId

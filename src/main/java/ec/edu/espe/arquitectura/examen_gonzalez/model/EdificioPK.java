@@ -2,11 +2,13 @@ package ec.edu.espe.arquitectura.examen_gonzalez.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
+@Data
 public class EdificioPK implements Serializable {
 
     @Column(name = "COD_EDIFICIO", length = 8, nullable = false)

@@ -1,6 +1,7 @@
 package ec.edu.espe.arquitectura.examen_gonzalez.controller;
 
 import ec.edu.espe.arquitectura.examen_gonzalez.model.Edificio;
+import ec.edu.espe.arquitectura.examen_gonzalez.model.Sede;
 import ec.edu.espe.arquitectura.examen_gonzalez.service.EdificioService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +22,9 @@ public class EdificioController {
         this.edificioService = edificioService;
     }
 
-//    @GetMapping("/{sedeCode}")
-//    public ResponseEntity<List<Edificio>> obtainBySedeCode(@PathVariable(name = "sedeCode") String sedeCode) {
-//        List<Edificio> edificios = this.edificioService.listBySedeOrderBySuperficieDesc(sedeCode);
-//        return ResponseEntity.ok(edificios);
-//    }
+    @GetMapping("/{sedeCode}")
+    public ResponseEntity<List<Edificio>> obtainBySedeCode(@PathVariable(name = "sedeCode") Sede sedeCode) {
+        List<Edificio> edificios = this.edificioService.listBySedeOrderBySuperficieDesc(sedeCode);
+        return ResponseEntity.ok(edificios);
+    }
 }
