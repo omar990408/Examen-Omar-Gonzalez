@@ -4,10 +4,7 @@ import ec.edu.espe.arquitectura.examen_gonzalez.model.Edificio;
 import ec.edu.espe.arquitectura.examen_gonzalez.model.Sede;
 import ec.edu.espe.arquitectura.examen_gonzalez.service.EdificioService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,5 +23,15 @@ public class EdificioController {
     public ResponseEntity<List<Edificio>> obtainBySedeCode(@PathVariable(name = "sedeCode") Sede sedeCode) {
         List<Edificio> edificios = this.edificioService.listBySedeOrderBySuperficieDesc(sedeCode);
         return ResponseEntity.ok(edificios);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Edificio> update(@RequestBody Edificio edificio) {
+        try {
+            Edificio edificioRS = this.edificioService.update(edificio);
+            return ResponseEntity.ok(edificioRS);
+        } catch (RuntimeException rte) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
