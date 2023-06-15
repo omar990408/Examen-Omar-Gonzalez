@@ -13,8 +13,11 @@ public class Sede {
     @Column(name = "COD_SEDE", nullable = false, length = 8)
     private String codigo;
 
+    @Column(name = "COD_INSTITUCION", nullable = false, precision = 3, scale = 0)
+    private Integer codigoInstitucion;
+
     @ManyToOne
-    @JoinColumn(name = "COD_INSTITUCION", referencedColumnName = "COD_INSTITUCION", nullable = false)
+    @JoinColumn(name = "COD_INSTITUCION", referencedColumnName = "COD_INSTITUCION", insertable=false, updatable=false)
     private Institucion institucion;
 
     @Column(name = "NOMBRE", nullable = false, length = 100)
@@ -33,6 +36,14 @@ public class Sede {
     @Version
     @Column(name = "VERSION", nullable = false)
     private Long version;
+
+    public Integer getCodigoInstitucion() {
+        return codigoInstitucion;
+    }
+
+    public void setCodigoInstitucion(Integer codigoInstitucion) {
+        this.codigoInstitucion = codigoInstitucion;
+    }
 
     public Sede() {
     }

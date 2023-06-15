@@ -21,9 +21,9 @@ public class EdificioController {
         this.edificioService = edificioService;
     }
 
-    @GetMapping("/{sedeCode}")
-    public ResponseEntity<List<Edificio>> obtainBySedeCode(@PathVariable(name = "sedeCode") String sedeCode) {
-        List<Edificio> edificios = this.edificioService.listBySedeOrderBySuperficieDesc(sedeCode);
-        return ResponseEntity.ok(edificios);
-    }
+//    @GetMapping("/{sedeCode}")
+//    public ResponseEntity<List<Edificio>> obtainBySedeCode(@PathVariable(name = "sedeCode") String sedeCode) {
+//        List<Edificio> edificios = this.edificioService.listBySedeOrderBySuperficieDesc(sedeCode);
+//        return ResponseEntity.ok(edificios);
+//    }
 }

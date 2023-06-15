@@ -2,12 +2,12 @@ package ec.edu.espe.arquitectura.examen_gonzalez.service;
 
 import ec.edu.espe.arquitectura.examen_gonzalez.model.Edificio;
 import ec.edu.espe.arquitectura.examen_gonzalez.model.EdificioPK;
+import ec.edu.espe.arquitectura.examen_gonzalez.model.Sede;
 import ec.edu.espe.arquitectura.examen_gonzalez.repository.EdificioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EdificioService {
@@ -32,7 +32,7 @@ public class EdificioService {
          }
     }
 
-    public List<Edificio> listBySedeOrderBySuperficieDesc(String sede){
+    public List<Edificio> listBySedeOrderBySuperficieDesc(Sede sede){
         return this.edificioRepository.findBySedeOrderBySuperficieDesc(sede);
     }
 
